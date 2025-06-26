@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  font-size: 16px;
+  background-color: #0d1117;
+  color: #eee;
+  transition: background 0.5s, color 0.5s;
+  padding-top: 2rem; /* Espace en haut */
+}
+
+body.light {
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.calendar {
+  background-color: #161b22;
+  width: 45rem;
+  height: auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: background 0.5s;
+}
+
+body.light .calendar {
+  background-color: #ffffff;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #238636;
+  padding: 1.2rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.month i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.month p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.weekdays,
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.weekdays div,
+.days div {
+  width: calc(100% / 7);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weekdays div {
+  font-weight: bold;
+  color: #999;
+}
+
+.days div {
+  margin: 0.3rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.days div:hover {
+  background-color: #2c313a;
+}
+
+.days div.today {
+  background-color: #238636;
+  color: #fff;
+  font-weight: bold;
+}
+
+.days div.has-event {
+  border: 2px solid #ff9800;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.3;
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.event-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #21262d;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+}
+
+body.light .event-popup {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.event-popup input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.event-popup button {
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.event-popup.hidden {
+  display: none;
+}
